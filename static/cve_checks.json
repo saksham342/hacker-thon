@@ -1,0 +1,135 @@
+[
+    {
+        "cve_id": "CVE-2021-34527",
+        "command": "sc query Spooler",
+        "output_match_word": "RUNNING",
+        "patch_check": "wmic qfe list | findstr KB5004945",
+        "patch_missing_match": "",
+        "description": "PrintNightmare: Privilege escalation via Print Spooler service.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2020-1472",
+        "command": "systeminfo",
+        "output_match_word": "Domain Controller",
+        "patch_check": "wmic qfe list | findstr KB4571729",
+        "patch_missing_match": "",
+        "description": "ZeroLogon: Netlogon protocol vulnerability affecting domain controllers.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2021-1732",
+        "command": "systeminfo",
+        "output_match_word": "10.0.19041",
+        "patch_check": "wmic qfe list | findstr KB5000802",
+        "patch_missing_match": "",
+        "description": "Win32k elevation of privilege vulnerability in Windows 10.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2019-1388",
+        "command": "reg query HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System",
+        "output_match_word": "ConsentPromptBehaviorAdmin",
+        "patch_check": "wmic qfe list | findstr KB4517389",
+        "patch_missing_match": "",
+        "description": "UAC bypass via certificate validation flaw.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2020-0668",
+        "command": "sc query wuauserv",
+        "output_match_word": "RUNNING",
+        "patch_check": "wmic qfe list | findstr KB4534309",
+        "patch_missing_match": "",
+        "description": "Windows Update service elevation vulnerability.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2016-7255",
+        "command": "driverquery",
+        "output_match_word": "capcom.sys",
+        "description": "Capcom driver kernel exploit allowing SYSTEM access.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2021-36934",
+        "command": "icacls \"C:\\Windows\\System32\\config\\sam\"",
+        "output_match_word": "Users:(F)",
+        "patch_check": "wmic qfe list | findstr KB5005033",
+        "patch_missing_match": "",
+        "description": "HiveNightmare: Improper SAM file permissions.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2020-0796",
+        "command": "systeminfo",
+        "output_match_word": "10.0.18362",
+        "patch_check": "wmic qfe list | findstr KB4551762",
+        "patch_missing_match": "",
+        "description": "SMBGhost: SMBv3 remote code execution vulnerability.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2018-8120",
+        "command": "systeminfo",
+        "output_match_word": "10.0.17134",
+        "patch_check": "wmic qfe list | findstr KB4103727",
+        "patch_missing_match": "",
+        "description": "Win32k elevation via null pointer dereference.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2019-0841",
+        "command": "reg query HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModel",
+        "output_match_word": "AppModelUnlock",
+        "patch_check": "wmic qfe list | findstr KB4490481",
+        "patch_missing_match": "",
+        "description": "AppX deployment service bypass for privilege escalation.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2020-1054",
+        "command": "systeminfo",
+        "output_match_word": "10.0.17763",
+        "patch_check": "wmic qfe list | findstr KB4550969",
+        "patch_missing_match": "",
+        "description": "Win32k elevation via out-of-bounds write.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2021-40449",
+        "command": "driverquery",
+        "output_match_word": "win32k.sys",
+        "patch_check": "wmic qfe list | findstr KB5006670",
+        "patch_missing_match": "",
+        "description": "Win32k use-after-free vulnerability.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2017-0213",
+        "command": "sc query Winmgmt",
+        "output_match_word": "RUNNING",
+        "patch_check": "wmic qfe list | findstr KB4019260",
+        "patch_missing_match": "",
+        "description": "WMI provider host elevation vulnerability.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2020-1313",
+        "command": "systeminfo",
+        "output_match_word": "10.0.19042",
+        "patch_check": "wmic qfe list | findstr KB4565483",
+        "patch_missing_match": "",
+        "description": "Windows Update Orchestrator elevation vulnerability.",
+        "requires_admin": false
+    },
+    {
+        "cve_id": "CVE-2019-1458",
+        "command": "systeminfo",
+        "output_match_word": "10.0.18363",
+        "patch_check": "wmic qfe list | findstr KB4530684",
+        "patch_missing_match": "",
+        "description": "Win32k privilege escalation via wizard exploit.",
+        "requires_admin": false
+    }
+]

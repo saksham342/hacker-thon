@@ -1,0 +1,176 @@
+<!-- ~/simple_bank/templates/index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ICK Bank</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Tektur", sans-serif;
+      }
+      body {
+        background: linear-gradient(135deg, #373738, #2a5298);
+        color: #fff;
+        font-family: "Arial", sans-serif;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+      .header {
+        background: #000000;
+        padding: 20px;
+        border-radius: 10px 10px 0 0;
+        margin: -30px -30px 30px;
+        text-align: center;
+        color: white;
+      }
+      .btn-bank {
+        background: #e74c3c;
+        border: none;
+        transition: background 0.3s;
+      }
+      .btn-bank:hover {
+        background: #c0392b;
+      }
+      .card {
+        background: #ecf0f1;
+        border: none;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+      .nav-tabs .nav-link {
+        color: #34495e;
+      }
+      .nav-tabs .nav-link.active {
+        background: #e74c3c;
+        color: white;
+      }
+      .table {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 style="color: rgb(183, 218, 219)">ICK Bank Pvt. Ltd.</h1>
+        <form method="POST" style="display: inline"></form>
+      </div>
+
+      <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('index') }}"
+            >Bank Dashboard</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('db_simulator') }}">DB Status</a>
+        </li>
+      </ul>
+
+      <h3 style="color: #000000">
+        Total Balance: ${{ "%.2f" | format(total_balance) }}
+      </h3>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <h4>Accounts</h4>
+            <form method="POST" class="mb-3">
+              <input type="hidden" name="action" value="add_account" />
+              <button type="submit" class="btn btn-bank">Add Account</button>
+            </form>
+            {% for account in accounts %}
+            <div class="d-flex justify-content-between mb-2">
+              <span>{{ account.number }}</span>
+              <span>${{ "%.2f" | format(account.balance) }}</span>
+              <form method="POST" style="display: inline">
+                <input type="hidden" name="action" value="delete" />
+                <input
+                  type="hidden"
+                  name="account"
+                  value="{{ account.number }}"
+                />
+                <button type="submit" class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </form>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <h4>Transactions</h4>
+            <form method="POST">
+              <div class="mb-3">
+                <select name="action" class="form-select">
+                  <option value="deposit">Deposit</option>
+                  <option value="withdraw">Withdraw</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <input
+                  type="number"
+                  name="amount"
+                  step="0.01"
+                  class="form-control"
+                  placeholder="Amount"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <select name="account" class="form-select" required>
+                  {% for account in accounts %}
+                  <option value="{{ account.number }}">
+                    {{ account.number }}
+                  </option>
+                  {% endfor %}
+                </select>
+              </div>
+              <button type="submit" class="btn btn-bank w-100">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Transaction History</h4>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Account</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for tx in transactions %}
+            <tr>
+              <td>{{ tx.type }}</td>
+              <td>${{ "%.2f" | format(tx.amount) }}</td>
+              <td>{{ tx.account }}</td>
+              <td>{{ tx.timestamp }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReconX - Network Scanning Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
+    <style>
+        /* Add styles to ensure the network visualization stays within bounds */
+        .network-visualization {
+            position: relative;
+            width: 100%;
+            height: 600px; /* Fixed height as per original */
+            overflow: hidden; /* Prevent overflow outside the container */
+            border-radius: 12px;
+        }
+        #network-visualization {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ccc; /* Optional: Add a border for visibility */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Ragnar</div>
+            <nav>
+                <a href="/"><i class="material-icons">dns</i>Host Overview</a>
+                <a href="/ports"><i class="material-icons">settings_ethernet</i>Ports</a>
+                <a href="/scanning"><i class="material-icons">build</i>Scanning</a>
+                <a href="/vulnerabilities"><i class="material-icons">warning</i>Vulnerabilities</a>
+                <a href="/activity-log"><i class="material-icons">terminal</i>Activity Log</a>
+                <a href="/insider-threats"><i class="material-icons">person</i>Insider Threats</a>
+                <a href="/apt"><i class="material-icons">security</i>APT</a>
+                <a href="/manage-cve"><i class="material-icons">add_circle</i>Manage CVE</a> <!-- Added Manage CVE link -->
+                <a href="/social-engineering-toolkit"><i class="material-icons">group</i>Social Engineering Toolkit</a> <!-- Added Social Engineering Toolkit link -->
+                <a href="/zero-day"><i class="material-icons">security</i>Zero-Day</a> <!-- Added Zero-Day Exploits link -->
+                <a href="/help" target="_blank"><i class="material-icons">help_outline</i>Help</a> <!-- Help Section -->
+                <a href="/api_docs" target="_blank"><i class="material-icons">description</i>API Docs</a> <!-- API Docs Section -->
+            </nav>
+        </div>
+        <div class="main-content">
+            <header style="margin-left: 20px; border-radius: 14px;">
+                <div class="search-bar" style="width: 45vh;">
+                    <i class="material-icons">search</i>
+                    <input type="text" placeholder="Search hosts, ports, services...">
+                </div>
+                <div class="user-menu">
+                    <i class="material-icons notification-icon">notifications</i>
+                    <span class="notification-badge" id="notification-count">0</span>
+                </div>
+            </header>
+            <div class="scan-form" style="margin-left: 20px; margin-top: 10px; border-radius: 12px;">
+                <form id="scan-form">
+                    <input type="text" id="scan-target" placeholder="Enter subdomain or IP subnet (e.g., 192.168.1.0/24)">
+                    <button type="submit">Run Scan</button>
+                    <button type="button" id="clear-button">Clear</button>
+                </form>
+            </div>
+            <div class="dashboard">
+                <div class="host-summary card" style="max-height: 300px; overflow: scroll; min-height: 300px;">
+                    <h2>Host Summary</h2>
+                    <div id="host-details"></div>
+                </div>
+                <div class="ports-services card" style="grid-column: span 2; max-height: 300px; overflow: scroll; min-height: 300px;">
+                    <h2>Open Ports & Services</h2>
+                    <div id="ports-table"></div>
+                </div>
+                <div class="network-visualization card">
+                    <h2>Network Topology</h2>
+                    <div id="network-visualization"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+    <script>
+        function updateNotificationCount() {
+            fetch('/api/completed-processes')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const countElement = document.getElementById('notification-count');
+                    countElement.textContent = data.completed_processes;
+                    countElement.style.display = data.completed_processes > 0 ? 'inline-block' : 'none';
+                })
+                .catch(error => console.error('Error fetching notification count:', error));
+        }
+        updateNotificationCount();
+        setInterval(updateNotificationCount, 5000);
+    </script>
+</body>
+</html>

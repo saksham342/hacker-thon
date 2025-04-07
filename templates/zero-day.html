@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Day Exploits - Network Recon Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .terminal {
+            background-color: #000;
+            color: #fff;
+            font-family: monospace;
+            padding: 10px;
+            height: 600px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            background: var(--secondary-dark);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .tab-button {
+            padding: 12px 24px;
+            cursor: pointer;
+            background: transparent;
+            color: var(--text-light);
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .tab-button:hover {
+            background: var(--accent-blue);
+            color: #fff;
+        }
+        .tab-button.active {
+            background: var(--accent-blue);
+            color: #fff;
+        }
+        .tab-content {
+            padding: 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            height: calc(100vh - 180px); /* Adjust for header (80px) + tabs (60px) + margins */
+            overflow: hidden;
+        }
+        .tab-pane {
+            display: none;
+            height: 100%;
+        }
+        .tab-pane.active {
+            display: block;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 4px;
+            display: block;
+        }
+        .dashboard {
+            padding: 0;
+        }
+        .card {
+            margin: 20px 0;
+            padding: 20px;
+            height: calc(100vh - 40px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Ragnar</div>
+            <nav>
+                <a href="/"><i class="material-icons">dns</i>Host Overview</a>
+                <a href="/ports"><i class="material-icons">settings_ethernet</i>Ports</a>
+                <a href="/scanning"><i class="material-icons">build</i>Scanning</a>
+                <a href="/vulnerabilities"><i class="material-icons">warning</i>Vulnerabilities</a>
+                <a href="/activity-log"><i class="material-icons">terminal</i>Activity Log</a>
+                <a href="/insider-threats"><i class="material-icons">person</i>Insider Threats</a>
+                <a href="/apt"><i class="material-icons">security</i>APT</a>
+                <a href="/manage-cve"><i class="material-icons">add_circle</i>Manage CVE</a>
+                <a href="/social-engineering-toolkit"><i class="material-icons">group</i>Social Engineering Toolkit</a>
+                <a href="/zero-day" class="active"><i class="material-icons">security</i>Zero-Day</a>
+                <a href="/help" target="_blank"><i class="material-icons">help_outline</i>Help</a> <!-- Help Section -->
+                <a href="/api_docs" target="_blank"><i class="material-icons">description</i>API Docs</a> <!-- API Docs Section -->
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="search-bar">
+                    <i class="material-icons">search</i>
+                    <input type="text" placeholder="Search hosts, ports, services...">
+                </div>
+                <div class="user-menu">
+                    <i class="material-icons notification-icon">notifications</i>
+                    <span class="notification-badge" id="notification-count">0</span>
+                </div>
+            </header>
+            <div class="dashboard">
+                <div class="card">
+                    <h2>Zero-Day Exploits</h2>
+                    <div class="tabs">
+                        <button class="tab-button active" data-tab="navigate-bank">Navigate Bank Application</button>
+                        <button class="tab-button" data-tab="unauth-api">Unauth API Test</button>
+                        <button class="tab-button" data-tab="code-analysis">Code Analysis</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="navigate-bank" class="tab-pane active">
+                            <iframe src="http://127.0.0.1:5001" title="Navigate Bank Application"></iframe>
+                        </div>
+                        <div id="unauth-api" class="tab-pane">
+                            <iframe src="http://127.0.0.1:5002" title="Unauth API Test"></iframe>
+                        </div>
+                        <div id="code-analysis" class="tab-pane">
+                            <iframe src="http://127.0.0.1:5003/vuln_scanner" title="Code Analysis"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+
+        function updateNotificationCount() {
+            fetch('/api/completed-processes')
+                .then(response => response.json())
+                .then(data => {
+                    const countElement = document.getElementById('notification-count');
+                    countElement.textContent = data.completed_processes;
+                    countElement.style.display = data.completed_processes > 0 ? 'inline-block' : 'none';
+                })
+                .catch(error => console.error('Error fetching notification count:', error));
+        }
+        updateNotificationCount();
+        setInterval(updateNotificationCount, 5000);
+    </script>
+</body>
+</html>

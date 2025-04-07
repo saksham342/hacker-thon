@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Engineering Toolkit - Network Recon Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .terminal {
+            background-color: #000;
+            color: #fff;
+            font-family: monospace;
+            padding: 10px;
+            height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .tab-content {
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            min-height: 500px;
+        }
+
+        .phishing-section {
+            margin-bottom: 30px;
+        }
+
+        .phishing-section h4 {
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+        }
+
+        .phishing-section textarea {
+            width: 100%;
+            height: 200px;
+            resize: vertical;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--primary-dark);
+            color: var(--text-light);
+        }
+
+        .phishing-section input[type="text"],
+        .phishing-section input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--primary-dark);
+            color: var(--text-light);
+        }
+
+        .phishing-section button {
+            background: var(--accent-blue);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .phishing-section button:hover {
+            background: #1a73e8;
+        }
+
+        .phishing-section table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+        }
+
+        .phishing-section th,
+        .phishing-section td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .phishing-section th {
+            background: var(--secondary-dark);
+            font-weight: 500;
+        }
+
+        .phishing-section tbody tr:hover {
+            background: var(--secondary-dark);
+        }
+
+        .status-message {
+            margin-top: 10px;
+            color: var(--success-green);
+            display: none;
+        }
+
+        .error-message {
+            margin-top: 10px;
+            color: var(--error-red);
+            display: none;
+        }
+
+        /* Popup Styles for Email Details */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-box {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup-box h4 {
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+        }
+
+        .popup-box p {
+            margin: 10px 0;
+            color: var(--text-light);
+        }
+
+        .popup-box .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--error-red);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .popup-box .close-btn:hover {
+            background: #c62828;
+        }
+
+        .view-details-btn {
+            background: none;
+            border: none;
+            color: var(--accent-blue);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .view-details-btn:hover {
+            color: #1a73e8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Ragnar</div>
+            <nav>
+                <a href="/"><i class="material-icons">dns</i>Host Overview</a>
+                <a href="/ports"><i class="material-icons">settings_ethernet</i>Ports</a>
+                <a href="/scanning"><i class="material-icons">build</i>Scanning</a>
+                <a href="/vulnerabilities"><i class="material-icons">warning</i>Vulnerabilities</a>
+                <a href="/activity-log"><i class="material-icons">terminal</i>Activity Log</a>
+                <a href="/insider-threats"><i class="material-icons">person</i>Insider Threats</a>
+                <a href="/apt"><i class="material-icons">security</i>APT</a>
+                <a href="/manage-cve"><i class="material-icons">add_circle</i>Manage CVE</a>
+                <a href="/social-engineering-toolkit" class="active"><i class="material-icons">group</i>Social Engineering Toolkit</a>
+                <a href="/zero-day"><i class="material-icons">security</i>Zero-Day</a>
+                <a href="/help" target="_blank"><i class="material-icons">help_outline</i>Help</a> <!-- Help Section -->
+                <a href="/api_docs" target="_blank"><i class="material-icons">description</i>API Docs</a> <!-- API Docs Section -->
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="search-bar">
+                    <i class="material-icons">search</i>
+                    <input type="text" placeholder="Search hosts, ports, services...">
+                </div>
+                <div class="user-menu">
+                    <i class="material-icons notification-icon">notifications</i>
+                    <span class="notification-badge" id="notification-count">0</span>
+                </div>
+            </header>
+            <div class="dashboard">
+                <div class="card">
+                    <h2>Social Engineering Toolkit</h2>
+                    <div class="tabs">
+                        <button class="tab-button active" data-tab="proactive-phishing">Proactive Phishing Awareness</button>
+                        <button class="tab-button" data-tab="real-time-monitoring">Real-Time Monitoring</button>
+                        <button class="tab-button" data-tab="email-logs">Email Logs</button>
+                    </div>
+                    <div class="tab-content">
+                        <!-- First Tab: Proactive Phishing Awareness (Unchanged) -->
+                        <div id="proactive-phishing" class="tab-pane active">
+                            <h3>Phishing Campaign Management</h3>
+
+                            <!-- Edit Phishing Email Body -->
+                            <div class="phishing-section">
+                                <h4>Edit Phishing Email Body</h4>
+                                <form id="email-body-form">
+                                    <textarea name="email_body" placeholder="Enter phishing email template here..." required>{{ current_body }}</textarea>
+                                    <p>Use placeholders: <code>{name}</code>, <code>{phishing_url}</code></p>
+                                    <button type="submit">Save Email Template</button>
+                                    <div class="status-message" id="email-status">Email template saved successfully!</div>
+                                    <div class="error-message" id="email-error"></div>
+                                </form>
+                            </div>
+
+                            <!-- Manage Employees -->
+                            <div class="phishing-section">
+                                <h4>Manage Employees</h4>
+                                <form id="add-employee-form">
+                                    <input type="text" name="name" placeholder="Employee Name" required>
+                                    <input type="email" name="email" placeholder="Employee Email" required>
+                                    <button type="submit">Add Employee</button>
+                                    <div class="status-message" id="employee-status">Employee added successfully!</div>
+                                    <div class="error-message" id="employee-error"></div>
+                                </form>
+                                <table id="employee-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="employee-table-body">
+                                        {% if employees %}
+                                        {% for emp in employees %}
+                                        <tr>
+                                            <td>{{ emp.name }}</td>
+                                            <td>{{ emp.email }}</td>
+                                            <td><button class="delete-employee" data-email="{{ emp.email }}" style="color:#e0172d; background:none; border:none; cursor:pointer;">Delete</button></td>
+                                        </tr>
+                                        {% endfor %}
+                                        {% else %}
+                                        <tr>
+                                            <td colspan="3">No employees found.</td>
+                                        </tr>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Start Campaign -->
+                            <div class="phishing-section">
+                                <h4>Start Campaign</h4>
+                                <form id="start-campaign-form">
+                                    <button type="submit">Launch Phishing Campaign</button>
+                                    <div class="status-message" id="campaign-status">Campaign launched successfully!</div>
+                                    <div class="error-message" id="campaign-error"></div>
+                                </form>
+                            </div>
+
+                            <!-- Campaign Logs -->
+                            <div class="phishing-section">
+                                <h4>Campaign Logs</h4>
+                                <table id="logs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>Tracking ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th style="width: 10%;">IP Address</th>
+                                            <th>User Agent</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="logs-table-body">
+                                        {% if logs %}
+                                        {% for log in logs %}
+                                        <tr>
+                                            <td>{{ log.timestamp }}</td>
+                                            <td>{{ log.tracking_id }}</td>
+                                            <td>{{ log.name }}</td>
+                                            <td>{{ log.email }}</td>
+                                            <td>{{ log.ip_address }}</td>
+                                            <td>{{ log.user_agent }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                        {% else %}
+                                        <tr>
+                                            <td colspan="6">No campaign logs found.</td>
+                                        </tr>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Second Tab: Real-Time Monitoring (Updated) -->
+                        <div id="real-time-monitoring" class="tab-pane">
+                            <h3>Real-Time Monitoring</h3>
+                            <div class="phishing-section">
+                                <h4>Send Simulated Email</h4>
+                                <form id="send-email-form">
+                                    <input type="email" name="from" placeholder="From Email" required>
+                                    <input type="email" name="to" placeholder="To Email" required>
+                                    <input type="text" name="subject" placeholder="Subject" required>
+                                    <textarea name="body" placeholder="Email Body" required></textarea>
+                                    <button type="submit">Send Email</button>
+                                    <div class="status-message" id="send-email-status">Email sent successfully!</div>
+                                    <div class="error-message" id="send-email-error"></div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Third Tab: Email Logs (Updated) -->
+                        <div id="email-logs" class="tab-pane">
+                            <h3>Email Logs</h3>
+                            <div class="phishing-section">
+                                <h4>Email Summary</h4>
+                                <table id="email-logs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Index</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Subject</th>
+                                            <th style="width: 7%;">SPF Info</th>
+                                            <th>DMARC Info</th>
+                                            <th style="width: 12%;">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="email-logs-table-body">
+                                        <!-- Populated dynamically via JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup for Email Details -->
+    <div class="popup-overlay" id="email-details-popup">
+        <div class="popup-box">
+            <button class="close-btn" onclick="closePopup()">Close</button>
+            <h4>Email Details</h4>
+            <p><strong>From:</strong> <span id="popup-from"></span></p>
+            <p><strong>To:</strong> <span id="popup-to"></span></p>
+            <p><strong>Subject:</strong> <span id="popup-subject"></span></p>
+            <p><strong>Body:</strong> <span id="popup-body"></span></p>
+            <p><strong>SPF Info:</strong> <span id="popup-spf"></span></p>
+            <p><strong>DMARC Info:</strong> <span id="popup-dmarc"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching logic
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Notification count update
+        function updateNotificationCount() {
+            fetch('/api/completed-processes')
+                .then(response => response.json())
+                .then(data => {
+                    const countElement = document.getElementById('notification-count');
+                    countElement.textContent = data.completed_processes;
+                    countElement.style.display = data.completed_processes > 0 ? 'inline-block' : 'none';
+                })
+                .catch(error => console.error('Error fetching notification count:', error));
+        }
+        updateNotificationCount();
+        setInterval(updateNotificationCount, 5000);
+
+        // Show status/error messages
+        function showMessage(elementId, message, isError = false) {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.style.display = 'block';
+            setTimeout(() => element.style.display = 'none', 3000);
+        }
+
+        // Refresh employee table
+        function refreshEmployeeTable() {
+            fetch('/social-engineering-toolkit/get-employees')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#employee-table-body');
+                    tbody.innerHTML = '';
+                    if (data.success && data.employees && data.employees.length > 0) {
+                        data.employees.forEach(emp => {
+                            const newRow = document.createElement('tr');
+                            newRow.innerHTML = `
+                                <td>${emp.name}</td>
+                                <td>${emp.email}</td>
+                                <td><button class="delete-employee" data-email="${emp.email}" style="color:#e0172d; background:none; border:none; cursor:pointer;">Delete</button></td>
+                            `;
+                            tbody.appendChild(newRow);
+                        });
+                    } else {
+                        tbody.innerHTML = '<tr><td colspan="3">No employees found.</td></tr>';
+                    }
+                    attachDeleteListeners();
+                })
+                .catch(error => showMessage('employee-error', 'Error loading employees.', true));
+        }
+
+        // Refresh logs table
+        function refreshLogsTable() {
+            fetch('/social-engineering-toolkit/get-logs')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#logs-table-body');
+                    tbody.innerHTML = '';
+                    if (data.success && data.logs && data.logs.length > 0) {
+                        data.logs.forEach(log => {
+                            const newRow = document.createElement('tr');
+                            newRow.innerHTML = `
+                                <td>${log.timestamp}</td>
+                                <td>${log.tracking_id}</td>
+                                <td>${log.name}</td>
+                                <td>${log.email}</td>
+                                <td>${log.ip_address}</td>
+                                <td>${log.user_agent}</td>
+                            `;
+                            tbody.appendChild(newRow);
+                        });
+                    } else {
+                        tbody.innerHTML = '<tr><td colspan="6">No campaign logs found.</td></tr>';
+                    }
+                })
+                .catch(error => showMessage('campaign-error', 'Error loading logs.', true));
+        }
+
+        // Refresh email logs table (Third Tab)
+        function refreshEmailLogsTable() {
+            fetch('/social-engineering-toolkit/get-email-logs')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#email-logs-table-body');
+                    tbody.innerHTML = '';
+                    if (data.success && data.logs && data.logs.length > 0) {
+                        data.logs.forEach((log, index) => {
+                            const newRow = document.createElement('tr');
+                            newRow.innerHTML = `
+                                <td>${index}</td>
+                                <td>${log.from}</td>
+                                <td>${log.to.join(', ')}</td>
+                                <td>${log.subject}</td>
+                                <td>${log.spf_info}</td>
+                                <td>${log.dmarc_info}</td>
+                                <td><button class="view-details-btn" data-index="${index}">View Details</button></td>
+                            `;
+                            tbody.appendChild(newRow);
+                        });
+                        attachViewDetailsListeners();
+                    } else {
+                        tbody.innerHTML = '<tr><td colspan="7">No email logs found.</td></tr>';
+                    }
+                })
+                .catch(error => showMessage('campaign-error', 'Error loading email logs.', true));
+        }
+
+        // Handle Email Body Form Submission (First Tab)
+        document.getElementById('email-body-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch('/social-engineering-toolkit/edit-email-body', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        showMessage('email-status', data.message);
+                    } else {
+                        showMessage('email-error', data.message, true);
+                    }
+                })
+                .catch(error => showMessage('email-error', 'Error saving email body.', true));
+        });
+
+        // Handle Add Employee Form Submission (First Tab)
+        document.getElementById('add-employee-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch('/social-engineering-toolkit/add-employee', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        refreshEmployeeTable();
+                        this.reset();
+                        showMessage('employee-status', data.message);
+                    } else {
+                        showMessage('employee-error', data.message, true);
+                    }
+                })
+                .catch(error => showMessage('employee-error', 'Error adding employee.', true));
+        });
+
+        // Handle Delete Employee (First Tab)
+        function attachDeleteListeners() {
+            document.querySelectorAll('.delete-employee').forEach(button => {
+                button.addEventListener('click', function () {
+                    const email = this.dataset.email;
+                    fetch(`/social-engineering-toolkit/delete-employee?email=${encodeURIComponent(email)}`, {
+                        method: 'POST'
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                this.closest('tr').remove();
+                                showMessage('employee-status', data.message);
+                            } else {
+                                showMessage('employee-error', data.message, true);
+                            }
+                        })
+                        .catch(error => showMessage('employee-error', 'Error deleting employee.', true));
+                });
+            });
+        }
+        attachDeleteListeners();
+
+        // Handle Start Campaign Form Submission (First Tab)
+        document.getElementById('start-campaign-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            fetch('/social-engineering-toolkit/start-campaign', {
+                method: 'POST'
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        refreshLogsTable();
+                        showMessage('campaign-status', data.message);
+                        refreshEmployeeTable();
+                    } else {
+                        showMessage('campaign-error', data.message, true);
+                    }
+                })
+                .catch(error => showMessage('campaign-error', 'Error starting campaign.', true));
+        });
+
+        // Handle Send Email Form Submission (Second Tab)
+        document.getElementById('send-email-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const emailData = {
+                from: formData.get('from'),
+                to: formData.get('to'),
+                subject: formData.get('subject'),
+                body: formData.get('body')
+            };
+            fetch('/api/send-email-for-simulation-from', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(emailData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        showMessage('send-email-status', data.message || 'Email sent successfully!');
+                        this.reset();
+                        refreshEmailLogsTable(); // Refresh email logs after sending
+                    } else {
+                        showMessage('send-email-error', data.message || 'Error sending email.', true);
+                    }
+                })
+                .catch(error => showMessage('send-email-error', 'Error sending email.', true));
+        });
+
+        // Handle View Details for Email Logs (Third Tab)
+        function attachViewDetailsListeners() {
+            document.querySelectorAll('.view-details-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const index = this.dataset.index;
+                    fetch('/social-engineering-toolkit/get-email-logs')
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success && data.logs && data.logs[index]) {
+                                const log = data.logs[index];
+                                document.getElementById('popup-from').textContent = log.from;
+                                document.getElementById('popup-to').textContent = log.to.join(', ');
+                                document.getElementById('popup-subject').textContent = log.subject;
+                                document.getElementById('popup-body').textContent = log.body || 'N/A';
+                                document.getElementById('popup-spf').textContent = log.spf_info;
+                                document.getElementById('popup-dmarc').textContent = log.dmarc_info;
+                                document.getElementById('email-details-popup').style.display = 'flex';
+                            } else {
+                                showMessage('campaign-error', 'Error loading email details.', true);
+                            }
+                        })
+                        .catch(error => showMessage('campaign-error', 'Error loading email details.', true));
+                });
+            });
+        }
+
+        // Close Popup
+        function closePopup() {
+            document.getElementById('email-details-popup').style.display = 'none';
+        }
+
+        // Populate tables on page load
+        window.addEventListener('load', () => {
+            refreshEmployeeTable();
+            refreshLogsTable();
+            refreshEmailLogsTable();
+        });
+    </script>
+</body>
+
+</html>

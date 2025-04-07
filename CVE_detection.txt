@@ -1,0 +1,10 @@
+CVE Detection - 192.168.1.65
+
+Timestamp: 2025-04-04 19:19:20
+
+{
+  "results": {
+    "error": "Error: CVE JSON file 'cve_checks.json' not found."
+  },
+  "timestamp": "2025-04-04 19:19:20"
+}

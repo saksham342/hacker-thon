@@ -1,0 +1,2055 @@
+Timestamp: 2025-04-04 19:18:13
+
+{
+  "results": {
+    "cve_vulnerabilities": [
+      {
+        "cve": "CVE-2021-1732",
+        "description": "Win32k elevation vulnerability"
+      },
+      {
+        "cve": "CVE-2020-1472",
+        "description": "ZeroLogon vulnerability"
+      },
+      {
+        "cve": "CVE-2021-34527",
+        "description": "PrintNightmare vulnerability"
+      }
+    ],
+    "group_membership": {
+      "details": "GROUP INFORMATION\n-----------------\n\nGroup Name                                                    Type             SID          Attributes                                        \n============================================================= ================ ============ ==================================================\nEveryone                                                      Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group\nNT AUTHORITY\\Local account and member of Administrators group Well-known group S-1-5-114    Group used for deny only                          \nBUILTIN\\Administrators                                        Alias            S-1-5-32-544 Group used for deny only                          \nBUILTIN\\Performance Log Users                                 Alias            S-1-5-32-559 Mandatory group, Enabled by default, Enabled group\nBUILTIN\\Users                                                 Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group\nNT AUTHORITY\\INTERACTIVE                                      Well-known group S-1-5-4      Mandatory group, Enabled by default, Enabled group\nCONSOLE LOGON                                                 Well-known group S-1-2-1      Mandatory group, Enabled by default, Enabled group\nNT AUTHORITY\\Authenticated Users                              Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group\nNT AUTHORITY\\This Organization                                Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group\nNT AUTHORITY\\Local account                                    Well-known group S-1-5-113    Mandatory group, Enabled by default, Enabled group\nLOCAL                                                         Well-known group S-1-2-0      Mandatory group, Enabled by default, Enabled group\nNT AUTHORITY\\NTLM Authentication                              Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group\nMandatory Label\\Medium Mandatory Level                        Label            S-1-16-8192",
+      "status": "Vulnerable"
+    },
+    "scan_initiated_by": "C",
+    "service_restart_permissions": [
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)",
+        "service": "AJRouter"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "ALG"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "AppIDSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)",
+        "service": "Appinfo"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "AppReadiness"
+      },
+      {
+        "dacl": "D:(A;;LCRP;;;AC)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)",
+        "service": "AppXSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "AudioEndpointBuilder"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWLORC;;;AC)(A;;CCLCSWLORC;;;S-1-15-3-1024-1692970155-4054893335-185714091-3362601943-3526593181-1159816984-2199008581-497492991)",
+        "service": "Audiosrv"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "autotimesvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "AxInstSV"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLORCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLORCWDWO;;;BA)(A;;CCLCSWRPLORC;;;BU)(A;;CCLCSWRPLORC;;;AU)",
+        "service": "BDESVC"
+      },
+      {
+        "dacl": "D:(A;;CCLCLORC;;;AU)(A;;CCDCLCSWRPLORCWDWO;;;SY)(A;;CCLCSWRPLORCWDWO;;;BA)(A;;CCLCLO;;;BU)",
+        "service": "BFE"
+      },
+      {
+        "dacl": "D:(A;CI;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "BITS"
+      },
+      {
+        "dacl": "D:(A;;CCLCLORC;;;AU)(A;;CCDCLCSWRPWPDTLORCWDWO;;;SY)(A;;CCLCSWRPWPDTLORCWDWO;;;BA)(A;;CCLCRPLO;;;BU)",
+        "service": "BrokerInfrastructure"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "Browser"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "BTAGService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "BthAvctpSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "bthserv"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "camsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)",
+        "service": "CDPSvc"
+      },
+      {
+        "dacl": "D:(A;CI;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;RPWP;;;S-1-5-80-446051430-1559341753-4161941529-1950928533-810483104)",
+        "service": "CertPropSvc"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;LCRPLO;;;AC)(A;;CCLCSWRPLOCRRC;;;SU)(A;;LCRP;;;AU)",
+        "service": "ClipSVC"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "COMSysApp"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWRPLOCRRC;;;SU)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;AC)",
+        "service": "CoreMessagingRegistrar"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;SO)(A;;CCLCSWLORC;;;AC)(A;;CCLCSWLORC;;;S-1-15-3-1024-3203351429-2120443784-2872670797-1918958302-2829055647-4275794519-765664414-2751773334)",
+        "service": "CryptSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCLORC;;;AU)(A;;CCDCLCSWRPWPDTLORCWDWO;;;SY)(A;;CCLCSWRPWPDTLORCWDWO;;;BA)(A;;CCLCLO;;;BU)",
+        "service": "DcomLaunch"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "dcsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "defragsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DemoService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DemoService1"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DemoService2"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DemoService3"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DemoService4"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DemoService5"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DeviceAssociationService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DeviceInstall"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DevQueryBroker"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;NO)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;S-1-2-1)(A;;CCLCSWRPWPDTLOCRRC;;;SY)",
+        "service": "Dhcp"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "diagnosticshub.standardcollector.service"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "diagsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DiagTrack"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DispBrokerDesktopSvc"
+      },
+      {
+        "dacl": "D:(A;;LCRPCR;;;AC)(A;;LCRPCR;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DisplayEnhancementService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DmEnrollmentSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;LCRP;;;AC)(A;;LCRP;;;IU)(A;;LCRP;;;AU)",
+        "service": "dmwappushservice"
+      },
+      {
+        "dacl": "D:(A;CI;CCLCSWRPLORC;;;BU)(A;CI;CCLCSWRPDTLORC;;;BA)(A;CI;CCLCSWRPDTLORC;;;SY)(A;;CCLCSWRPLORC;;;IU)(A;CI;CCLCSWRPLORC;;;NS)(A;CI;CCLCSWRPLORC;;;LS)(A;CI;CCLCSWRPDTLORC;;;NO)(A;CI;CCLCSWDTLOCRRC;;;S-1-5-80-2940520708-3855866260-481812779-327648279-1710889582)(A;CI;CCLCSWRPLORC;;;AC)(A;CI;CCLCSWRPLORC;;;S-1-15-3-1)(A;CI;CCLCSWRPLORC;;;S-1-15-3-2)(A;CI;CCLCSWRPLORC;;;S-1-15-3-3)",
+        "service": "Dnscache"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;DCRC;;;S-1-5-80-3055155277-3816794035-3994065555-2874236192-2193176987)",
+        "service": "DoSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "dot3svc"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DPS"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;RP;;;BU)",
+        "service": "DsmSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;LCRP;;;WD)(A;;LCRP;;;AC)",
+        "service": "DsSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "DusmSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "Eaphost"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "edgeupdate"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "edgeupdatem"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPLOCRRC;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)(A;;LCRP;;;AU)(A;;LCRP;;;AC)",
+        "service": "EFS"
+      },
+      {
+        "dacl": "D:(A;;LCRP;;;AC)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)",
+        "service": "embeddedmode"
+      },
+      {
+        "dacl": "D:(A;;LCRP;;;AC)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)",
+        "service": "EntAppSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;LCLO;;;AC)",
+        "service": "EventLog"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "EventSystem"
+      },
+      {
+        "dacl": "D:(A;;LCRP;;;WD)(A;;CCLCSWRPWPDTLOCRRC;;;S-1-5-80-2117685068-4011115449-2646761356-2137676340-222423812)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;AU)",
+        "service": "Fax"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "fdPHost"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;NO)",
+        "service": "FDResPub"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;AU)",
+        "service": "fhsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;RP;;;IU)(A;;RP;;;SU)(A;;CCLCSWRPLOCRRC;;;AC)",
+        "service": "FontCache"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "FrameServer"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "GameInputSvc"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCLCSWLOCRRC;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "gpsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "GraphicsPerfSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "hidserv"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "HvHost"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;LCRP;;;WD)(A;;CCLCSWRPLOCRRC;;;S-1-15-2-155514346-2573954481-755741238-1654018636-1233331829-3075935687-2861478708)(A;;CCLCSWRPLOCRRC;;;S-1-15-2-1121366727-2517420131-1100342901-1044639592-4216533239-371662368-2140263060)(A;;CCLCSWRPLOCRRC;;;S-1-15-2-2543942650-389403887-2808249486-612059083-208952635-835677591-2189227231)(A;;CCLCSWRPLOCRRC;;;S-1-15-2-3801529221-2855318152-1555692692-2306892612-2338533892-3542301781-2904385964)",
+        "service": "icssvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "IKEEXT"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "InstallService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "iphlpsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWRPWPLOCRRC;;;SU)",
+        "service": "IpxlatCfgSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)",
+        "service": "KeyIso"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLOCRRC;;;S-1-2-0)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWLORC;;;AU)(A;;CCLCSWRPLOCRRC;;;SU)(A;;CCLCSWLORC;;;S-1-5-80-2818357584-3387065753-4000393942-342927828-138088443)",
+        "service": "KtmRm"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "LanmanServer"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "LanmanWorkstation"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;LCRP;;;S-1-15-3-1024-2158456844-3754929254-744589270-3611187126-2481208986-30837703-3416168463-2437063433)(A;;LCRP;;;IU)(A;;LCRP;;;S-1-5-32-2158456844-3754929254-744589270-3611187126-2481208986-30837703-3416168463-2437063433)(XA;;LCRPWP;;;S-1-15-3-1024-3842824567-178914259-466740046-159386189-4235713590-3349026085-1947878110-3889710422;(!(WIN://ISMULTISESSIONSKU)))(XA;;LCRPWP;;;IU;(!(WIN://ISMULTISESSIONSKU)))(XA;;LCRPWP;;;S-1-5-32-3842824567-178914259-466740046-159386189-4235713590-3349026085-1947878110-3889710422;(!(WIN://ISMULTISESSIONSKU)))",
+        "service": "lfsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "LicenseManager"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "lltdsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "lmhosts"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "LxpSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;LCRP;;;AU)(A;;LCRP;;;AC)",
+        "service": "MapsBroker"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "McpManagementService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLOCRRC;;;BU)(A;;CCLCSWRPLOCRRC;;;SY)(A;;CCLCSWRPLOCRRC;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-1913148863-3492339771-4165695881-2087618961-4109116736)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-30551196-2029750602-3680353947-2336859763-523537544)",
+        "service": "MDCoreSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "MicrosoftEdgeElevationService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "MixedRealityOpenXRSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCLORC;;;AU)(A;;CCDCLCSWRPLORCWDWO;;;SY)(A;;CCLCSWRPLORCWDWO;;;BA)(A;;CCLCLO;;;BU)",
+        "service": "mpssvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLORC;;;S-1-2-0)(A;;CCDCLCSWRPWPDTLORC;;;SY)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;BA)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWLORC;;;AU)(A;;CCLCSWRPLORC;;;SU)(A;;CCLCSWLORC;;;S-1-5-80-3960419045-2460139048-4046793004-1809597027-2250574426)",
+        "service": "MSDTC"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "MSiSCSI"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)",
+        "service": "msiserver"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "MyService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "MyService8"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;AC)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)",
+        "service": "NaturalAuthentication"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "NcaSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "NcbService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "NcdAutoSetup"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "Netlogon"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "Netman"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "netprofm"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;AU)(A;;LCRP;;;IU)(A;;LCRP;;;SU)",
+        "service": "NetTcpPortSharing"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLORCWDWO;;;SY)(A;;CCLCSWRPWPDTLORCWDWO;;;BA)(A;;CCLCLORC;;;AU)",
+        "service": "NgcCtnrSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCLORC;;;AU)(A;;CCDCLCSWRPWPDTLORCWDWO;;;SY)(A;;CCLCSWRPLORCWDWO;;;BA)(A;;CCLCLO;;;BU)",
+        "service": "NgcSvc"
+      },
+      {
+        "dacl": "D:(A;CI;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;CI;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPRC;;;S-1-5-80-3141615172-2057878085-1754447212-2405740020-3916490453)",
+        "service": "NlaSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "nsi"
+      },
+      {
+        "dacl": "D:(D;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BG)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLORC;;;SO)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWRPLORC;;;RD)(A;;CCLCSWRPLORC;;;BU)",
+        "service": "p2pimsvc"
+      },
+      {
+        "dacl": "D:(D;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BG)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLORC;;;SO)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWRPLORC;;;RD)(A;;CCLCSWRPLORC;;;BU)",
+        "service": "p2psvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)",
+        "service": "PcaSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "perceptionsimulation"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "PerfHost"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;LCRP;;;WD)(A;;LCRP;;;AC)",
+        "service": "PhoneSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "PlugPlay"
+      },
+      {
+        "dacl": "D:(D;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BG)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLORC;;;SO)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWRPLORC;;;RD)",
+        "service": "PNRPAutoReg"
+      },
+      {
+        "dacl": "D:(D;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BG)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLORC;;;SO)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWRPLORC;;;RD)(A;;CCLCSWRPLORC;;;BU)",
+        "service": "PNRPsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "PolicyAgent"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "Power"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "PrintNotify"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "ProfSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "PushToInstall"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;AU)",
+        "service": "RasAuto"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;S-1-15-3-1024-1068037383-729401668-2768096886-125909118-1680096985-174794564-3112554050-3241210738)",
+        "service": "RasMan"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;AU)",
+        "service": "RemoteAccess"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "RemoteRegistry"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "RetailDemo"
+      },
+      {
+        "dacl": "D:(A;CI;CCLCSWRPWPDTLOCRRC;;;LS)(A;CI;CCDCLCSWRPWPDTLOCRRC;;;SY)(A;CI;CCDCLCSWRPWPDTLOCRRC;;;BA)(A;CI;CCLCSWRPWPDTLOCRRC;;;BU)",
+        "service": "RmSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCLORC;;;AU)(A;;CCDCLCSWRPWPDTLORCWDWO;;;SY)(A;;CCLCSWRPWPDTLORCWDWO;;;BA)(A;;CCLCRPLO;;;BU)",
+        "service": "RpcEptMapper"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "RpcLocator"
+      },
+      {
+        "dacl": "D:(A;;CCLCLORC;;;AU)(A;;CCDCLCSWRPWPDTLORCWDWO;;;SY)(A;;CCLCSWRPWPDTLORCWDWO;;;BA)(A;;CCLCLO;;;BU)",
+        "service": "RpcSs"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLO;;;IU)(A;;CCLCSWLO;;;BU)",
+        "service": "SamSs"
+      },
+      {
+        "dacl": "D:(A;CI;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "SCardSvr"
+      },
+      {
+        "dacl": "D:(A;CI;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;RPWP;;;S-1-5-80-3993802144-2555107232-3516638766-2735499450-3275915967)",
+        "service": "ScDeviceEnum"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLORC;;;AU)(A;;CCLCSWRPDTLOCRRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCLCSWLORC;;;BU)",
+        "service": "Schedule"
+      },
+      {
+        "dacl": "D:(A;CI;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "SCPolicySvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "SDRSVC"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPDTLOCRRC;;;IU)(A;;CCLCSWDTLOCRRC;;;SU)(A;;CCLCSWRPDTLOCRRC;;;AU)",
+        "service": "seclogon"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLORC;;;BU)(A;;CCLCSWRPLOCRRC;;;SY)(A;;CCLCSWRPLOCRRC;;;BA)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWRPLORC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;S-1-5-80-1601830629-990752416-3372939810-977361409-3075122917)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-259296475-4084429506-1152984619-38739575-565535606)",
+        "service": "SecurityHealthService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;LC;;;AC)(A;;LC;;;IU)(A;;LC;;;AU)(XA;;RPWP;;;S-1-15-3-1024-2169237947-275284851-3876357460-1273727642-1157490466-1177376558-883687086-945396102;(!(WIN://ISMULTISESSIONSKU)))(XA;;RPWP;;;IU;(!(WIN://ISMULTISESSIONSKU)))(XA;;RPWP;;;S-1-5-32-2169237947-275284851-3876357460-1273727642-1157490466-1177376558-883687086-945396102;(!(WIN://ISMULTISESSIONSKU)))",
+        "service": "SEMgrSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCR;;;SO)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;LCLORC;;;AC)",
+        "service": "SENS"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "SensorDataService"
+      },
+      {
+        "dacl": "D:(A;;LCRPCR;;;AC)(A;;LCRPCR;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "SensorService"
+      },
+      {
+        "dacl": "D:(A;;LCRPCR;;;AC)(A;;LCRPCR;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "SensrSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;RPWP;;;S-1-5-80-446051430-1559341753-4161941529-1950928533-810483104)(A;;RPWP;;;S-1-5-80-4130899010-3337817248-2959896732-3640118089-1866760602)",
+        "service": "SessionEnv"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "SgrmBroker"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWRPWPLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;S-1-5-80-3935728946-315639613-922904133-3250794525-491832002)",
+        "service": "SharedAccess"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)",
+        "service": "SharedRealitySvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "ShellHWDetection"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "shpamsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCRP;;;AU)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWLOCRRC;;;S-1-5-32-582)",
+        "service": "smphost"
+      },
+      {
+        "dacl": "D:(A;;CCLCLORC;;;AU)(A;;CCDCLCSWRPWPDTLORCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLORCWDWO;;;BA)(A;;CCLCRPLO;;;BU)",
+        "service": "SmsRouter"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "SNMPTRAP"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;LCRP;;;LS)",
+        "service": "spectrum"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)",
+        "service": "Spooler"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;LCRPLO;;;AC)(A;;CCLCSWRPLOCRRC;;;SU)(A;;LCRP;;;AU)",
+        "service": "sppsvc"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPLORC;;;SO)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;LS)(A;;CCLCSWRPWPDTLOCRRC;;;NS)",
+        "service": "SSDPSRV"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;RP;;;AU)",
+        "service": "ssh-agent"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;NO)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWRPLOCRRC;;;S-1-15-3-1024-1068037383-729401668-2768096886-125909118-1680096985-174794564-3112554050-3241210738)",
+        "service": "SstpSvc"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)(A;;LCRP;;;AC)",
+        "service": "StateRepository"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)",
+        "service": "stisvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "StorSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "svsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "swprv"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "SysMain"
+      },
+      {
+        "dacl": "D:(A;;CCLCLORC;;;AU)(A;;CCDCLCSWRPWPDTLORCWDWO;;;SY)(A;;CCLCSWRPWPDTLORCWDWO;;;BA)(A;;CCLCRPLO;;;BU)",
+        "service": "SystemEventsBroker"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;RP;;;WD)",
+        "service": "TabletInputService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)",
+        "service": "TapiSrv"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "TermService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "Themes"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "TieringEngineService"
+      },
+      {
+        "dacl": "D:(A;;CCLCLORC;;;AU)(A;;CCDCLCSWRPWPDTLORCWDWO;;;SY)(A;;CCLCSWRPWPDTLORCWDWO;;;BA)(A;;CCLCRPLO;;;BU)",
+        "service": "TimeBrokerSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "TokenBroker"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "TrkWks"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "TroubleshootingSvc"
+      },
+      {
+        "dacl": "D:(A;CI;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRRC;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "TrustedInstaller"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "tzautoupdate"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "uhssvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;RPWP;;;S-1-5-80-446051430-1559341753-4161941529-1950928533-810483104)",
+        "service": "UmRdpService"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPLORC;;;SO)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;LS)(A;;CCLCSWRPWPDTLOCRRC;;;NS)",
+        "service": "upnphost"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "UserManager"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)",
+        "service": "UsoSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "VacSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)(A;;CR;;;AU)(A;;LCRP;;;NS)(A;;LCRP;;;LS)(A;;LCRP;;;AC)",
+        "service": "VaultSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;AU)(A;;RPWPDT;;;BO)",
+        "service": "vds"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "vmicguestinterface"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "vmicheartbeat"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "vmickvpexchange"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "vmicrdv"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "vmicshutdown"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "vmictimesync"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "vmicvmsession"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "vmicvss"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPLO;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "VSInstallerElevationService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "VSS"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "VSStandardCollectorService150"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPLOCRRC;;;LS)(A;;CCSWWPLORC;;;LS)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-3169285310-278349998-1452333686-3865143136-4212226833)",
+        "service": "W32Time"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)",
+        "service": "WaaSMedicSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WalletService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WarpJITSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "wbengine"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)(A;;CCLCRP;;;AC)",
+        "service": "WbioSrvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "Wcmsvc"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;LS)(A;;CCLCSWRPWPDTLOCRSDRC;;;NO)",
+        "service": "wcncsvc"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWWPDTLOCRRC;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;S-1-5-80-2970612574-78537857-698502321-558674196-1451644582)",
+        "service": "WdiServiceHost"
+      },
+      {
+        "dacl": "D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWWPDTLOCRRC;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;S-1-5-80-2970612574-78537857-698502321-558674196-1451644582)",
+        "service": "WdiSystemHost"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLOCRRC;;;BU)(A;;CCLCSWRPLOCRRC;;;SY)(A;;CCLCSWRPLOCRRC;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-1913148863-3492339771-4165695881-2087618961-4109116736)",
+        "service": "WdNisSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WebClient"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "Wecsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WEPHOSTSVC"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "wercplsupport"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WerSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WFDSConMgrSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPLOCRRC;;;S-1-5-80-3182985763-1431228038-2757062859-428472846-3914011746)(A;;CR;;;AU)",
+        "service": "WiaRpc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLOCRRC;;;BU)(A;;CCLCSWRPLOCRRC;;;SY)(A;;CCLCSWRPLOCRRC;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWRPLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-1913148863-3492339771-4165695881-2087618961-4109116736)",
+        "service": "WinDefend"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLOSDRC;;;SY)(A;;CCLCSWRPLOSDRC;;;BA)(A;;CCLCSWRPLORC;;;AU)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWRPLORC;;;SU)(A;;LCRPLO;;;AC)(A;;LCRPLO;;;S-1-15-3-1)(A;;LCRPLO;;;S-1-15-3-2)(A;;LCRPLO;;;S-1-15-3-3)",
+        "service": "WinHttpAutoProxySvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "Winmgmt"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WinRM"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "wisvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;RPWPDT;;;S-1-5-80-3906544942-1489856346-3706913989-164347954-1900376235)",
+        "service": "WlanSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "wlidsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWRPWPDTLOCRRC;;;LS)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLORC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWLORC;;;S-1-15-2-155514346-2573954481-755741238-1654018636-1233331829-3075935687-2861478708)(A;;CCLCSWLORC;;;S-1-15-2-3083765670-2301828090-3288705196-2597965991-2057664196-4044987863-2761340229)(A;;CCLCSWLORC;;;S-1-15-2-3784866113-3187381476-3433752343-3391928953-3760210436-1684329488-1912184601)",
+        "service": "wlpasvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WManSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "wmiApSrv"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WMPNetworkSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "workfolderssvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WpcMonSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WPDBusEnum"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "WpnService"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLORC;;;BU)(A;;CCLCSWRPLOCRRC;;;SY)(A;;CCLCSWRPLOCRRC;;;BA)(A;;CCLCSWRPLORC;;;IU)(A;;CCLCSWRPLORC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;S-1-5-80-1601830629-990752416-3372939810-977361409-3075122917)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-80-259296475-4084429506-1152984619-38739575-565535606)",
+        "service": "wscsvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWLORC;;;S-1-15-3-1024-724741592-1210917904-489960769-637019204-3345707629-3097053430-1727148295-85063603)",
+        "service": "WSearch"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)",
+        "service": "wuauserv"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCRPLO;;;LS)(A;;LC;;;AC)",
+        "service": "WwanSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "XblAuthManager"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "XblGameSave"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "XboxGipSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "XboxNetApiSvc"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "AarSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)",
+        "service": "BcastDVRUserService_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "BluetoothUserService_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "CaptureService_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)",
+        "service": "cbdhsvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CR;;;AU)",
+        "service": "CDPUserSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)",
+        "service": "ConsentUxUserSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)",
+        "service": "CredentialEnrollmentManagerUserSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)",
+        "service": "DeviceAssociationBrokerSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)(A;;CCLCSWRPWPDTLOCRRC;;;S-1-5-21-2702878673-795188819-444038987-2781)",
+        "service": "DevicePickerUserSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)(A;;CCLCSWRPWPDTLOCRRC;;;S-1-5-21-2702878673-795188819-444038987-2781)",
+        "service": "DevicesFlowUserSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)",
+        "service": "MessagingService_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;LCRP;;;AC)(A;;LCRP;;;IU)(A;;LCRP;;;AU)",
+        "service": "OneSyncSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)",
+        "service": "PimIndexMaintenanceSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)(A;;CCLCSWRPWPDTLOCRRC;;;S-1-15-3-1024-4044835139-2658482041-3127973164-329287231-3865880861-1938685643-461067658-1087000422)(A;;CCLCSWRPWPDTLOCRRC;;;S-1-5-21-2702878673-795188819-444038987-2781)",
+        "service": "PrintWorkflowUserSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)",
+        "service": "UdkUserSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)",
+        "service": "UnistoreSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)",
+        "service": "UserDataSvc_2ed4f"
+      },
+      {
+        "dacl": "D:(A;;CCLCSWRPWPDTLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;IU)(A;;CCLCSWRPWPDTLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;AC)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)",
+        "service": "WpnUserService_2ed4f"
+      }
+    ],
+    "stored_credentials": {
+      "details": "Currently stored credentials:\n\n    Target: MicrosoftAccount:target=SSO_POP_Device\n    Type: Generic \n    User: 02umvkdjakzsrlvo\n    Saved for this logon only\n    \n    Target: WindowsLive:target=virtualapp/didlogical\n    Type: Generic \n    User: 02umvkdjakzsrlvo\n    Local machine persistence"
+    },
+    "unquoted_service_paths": [
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "AJRouter"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "AppIDSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "Appinfo"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k AppReadiness -p",
+        "service": "AppReadiness"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k wsappx -p",
+        "service": "AppXSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "AudioEndpointBuilder"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "Audiosrv"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k autoTimeSvc",
+        "service": "autotimesvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k AxInstSVGroup",
+        "service": "AxInstSV"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "BDESVC"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNoNetworkFirewall -p",
+        "service": "BFE"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "BITS"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k DcomLaunch -p",
+        "service": "BrokerInfrastructure"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "Browser"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted",
+        "service": "BTAGService"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "BthAvctpSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "bthserv"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k appmodel -p",
+        "service": "camsvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "CDPSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs",
+        "service": "CertPropSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k wsappx -p",
+        "service": "ClipSVC"
+      },
+      {
+        "path": "C:\\Windows\\system32\\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}",
+        "service": "COMSysApp"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNoNetwork -p",
+        "service": "CoreMessagingRegistrar"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k NetworkService -p",
+        "service": "CryptSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k DcomLaunch -p",
+        "service": "DcomLaunch"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "dcsvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k defragsvc",
+        "service": "defragsvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "DeviceAssociationService"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k DcomLaunch -p",
+        "service": "DeviceInstall"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "DevQueryBroker"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "Dhcp"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k diagnostics",
+        "service": "diagsvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k utcsvc -p",
+        "service": "DiagTrack"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "DispBrokerDesktopSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "DisplayEnhancementService"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "DmEnrollmentSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "dmwappushservice"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k NetworkService -p",
+        "service": "Dnscache"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k NetworkService -p",
+        "service": "DoSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "dot3svc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNoNetwork -p",
+        "service": "DPS"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "DsmSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "DsSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "DusmSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "Eaphost"
+      },
+      {
+        "path": "\"C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe\" /svc",
+        "service": "edgeupdate"
+      },
+      {
+        "path": "\"C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe\" /medsvc",
+        "service": "edgeupdatem"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "embeddedmode"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k appmodel -p",
+        "service": "EntAppSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "EventLog"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "EventSystem"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "fdPHost"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "service": "FDResPub"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "fhsvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "FontCache"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k Camera",
+        "service": "FrameServer"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "gpsvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k GraphicsPerfSvcGroup",
+        "service": "GraphicsPerfSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "hidserv"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "HvHost"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "icssvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "IKEEXT"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "InstallService"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k NetSvcs -p",
+        "service": "iphlpsvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "IpxlatCfgSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k NetworkServiceAndNoImpersonation -p",
+        "service": "KtmRm"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "LanmanServer"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k NetworkService -p",
+        "service": "LanmanWorkstation"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "lfsvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalService -p",
+        "service": "LicenseManager"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalService -p",
+        "service": "lltdsvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "lmhosts"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs",
+        "service": "LxpSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k NetworkService -p",
+        "service": "MapsBroker"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k McpManagementServiceGroup",
+        "service": "McpManagementService"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "MixedRealityOpenXRSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNoNetworkFirewall -p",
+        "service": "mpssvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "MSiSCSI"
+      },
+      {
+        "path": "C:\\Windows\\system32\\msiexec.exe /V",
+        "service": "msiserver"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "NaturalAuthentication"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k NetSvcs -p",
+        "service": "NcaSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "NcbService"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNoNetwork -p",
+        "service": "NcdAutoSetup"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "Netman"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalService -p",
+        "service": "netprofm"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "NgcCtnrSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "NgcSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k NetworkService -p",
+        "service": "NlaSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "nsi"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServicePeerNet",
+        "service": "p2pimsvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServicePeerNet",
+        "service": "p2psvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "PcaSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "PhoneSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNoNetwork -p",
+        "service": "pla"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k DcomLaunch -p",
+        "service": "PlugPlay"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServicePeerNet",
+        "service": "PNRPAutoReg"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServicePeerNet",
+        "service": "PNRPsvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k NetworkServiceNetworkRestricted -p",
+        "service": "PolicyAgent"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k DcomLaunch -p",
+        "service": "Power"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k print",
+        "service": "PrintNotify"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "ProfSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "PushToInstall"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "service": "QWAVE"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "RasAuto"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs",
+        "service": "RasMan"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs",
+        "service": "RemoteAccess"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k localService -p",
+        "service": "RemoteRegistry"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k rdxgroup",
+        "service": "RetailDemo"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNetworkRestricted",
+        "service": "RmSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k RPCSS -p",
+        "service": "RpcEptMapper"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k rpcss -p",
+        "service": "RpcSs"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceAndNoImpersonation",
+        "service": "SCardSvr"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted",
+        "service": "ScDeviceEnum"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "Schedule"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs",
+        "service": "SCPolicySvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k SDRSVC",
+        "service": "SDRSVC"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "seclogon"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "SEMgrSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "SENS"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "SensorService"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "service": "SensrSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "SessionEnv"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "SharedAccess"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "SharedRealitySvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "ShellHWDetection"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "shpamsvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k smphost",
+        "service": "smphost"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "SmsRouter"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "service": "SSDPSRV"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "SstpSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k appmodel -p",
+        "service": "StateRepository"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k imgsvc",
+        "service": "stisvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "StorSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "svsvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k swprv",
+        "service": "swprv"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "SysMain"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k DcomLaunch -p",
+        "service": "SystemEventsBroker"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "TabletInputService"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k NetworkService -p",
+        "service": "TapiSrv"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k NetworkService",
+        "service": "TermService"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "Themes"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "TimeBrokerSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "TokenBroker"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "TrkWks"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "TroubleshootingSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "tzautoupdate"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "UmRdpService"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "service": "upnphost"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "UserManager"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "UsoSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "VacSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "vmicguestinterface"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k ICService -p",
+        "service": "vmicheartbeat"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "vmickvpexchange"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k ICService -p",
+        "service": "vmicrdv"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "vmicshutdown"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "vmictimesync"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "vmicvmsession"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "vmicvss"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService",
+        "service": "W32Time"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k wusvcs -p",
+        "service": "WaaSMedicSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k appmodel -p",
+        "service": "WalletService"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNetworkRestricted",
+        "service": "WarpJITSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k WbioSvcGroup",
+        "service": "WbioSrvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "Wcmsvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "service": "wcncsvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalService -p",
+        "service": "WdiServiceHost"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "WdiSystemHost"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "WebClient"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k NetworkService -p",
+        "service": "Wecsvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k WepHostSvcGroup",
+        "service": "WEPHOSTSVC"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k netsvcs -p",
+        "service": "wercplsupport"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k WerSvcGroup",
+        "service": "WerSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "WFDSConMgrSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "WiaRpc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "WinHttpAutoProxySvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "Winmgmt"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k NetworkService -p",
+        "service": "WinRM"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "wisvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "WlanSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "wlidsvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "wlpasvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "WManSvc"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalService -p",
+        "service": "workfolderssvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService",
+        "service": "WpcMonSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted",
+        "service": "WPDBusEnum"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "WpnService"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "service": "wscsvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\SearchIndexer.exe /Embedding",
+        "service": "WSearch"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "wuauserv"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "service": "WwanSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "XblAuthManager"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "XblGameSave"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "XboxGipSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p",
+        "service": "XboxNetApiSvc"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k AarSvcGroup -p",
+        "service": "AarSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k BcastDVRUserService",
+        "service": "BcastDVRUserService_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k BthAppGroup -p",
+        "service": "BluetoothUserService_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k LocalService -p",
+        "service": "CaptureService_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k ClipboardSvcGroup -p",
+        "service": "cbdhsvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k UnistackSvcGroup",
+        "service": "CDPUserSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k DevicesFlow",
+        "service": "ConsentUxUserSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k DevicesFlow -p",
+        "service": "DeviceAssociationBrokerSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k DevicesFlow",
+        "service": "DevicePickerUserSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k DevicesFlow",
+        "service": "DevicesFlowUserSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k UnistackSvcGroup",
+        "service": "MessagingService_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k UnistackSvcGroup",
+        "service": "OneSyncSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k UnistackSvcGroup",
+        "service": "PimIndexMaintenanceSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k PrintWorkflow",
+        "service": "PrintWorkflowUserSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k UdkSvcGroup",
+        "service": "UdkUserSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\System32\\svchost.exe -k UnistackSvcGroup",
+        "service": "UnistoreSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k UnistackSvcGroup",
+        "service": "UserDataSvc_2ed4f"
+      },
+      {
+        "path": "C:\\Windows\\system32\\svchost.exe -k UnistackSvcGroup",
+        "service": "WpnUserService_2ed4f"
+      }
+    ],
+    "weak_service_accounts": [
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "AppIDSvc"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "BDESVC"
+      },
+      {
+        "runs_as": "NT Authority\\NetworkService",
+        "service": "CryptSvc"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "defragsvc"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "Dhcp"
+      },
+      {
+        "runs_as": "NT Authority\\NetworkService",
+        "service": "DoSvc"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "dot3svc"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "DusmSvc"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "Eaphost"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "icssvc"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "LicenseManager"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "mpssvc"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "nsi"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "PhoneSvc"
+      },
+      {
+        "runs_as": "NT Authority\\NetworkService",
+        "service": "PolicyAgent"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "RasAuto"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "RasMan"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "RemoteAccess"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "SDRSVC"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "SessionEnv"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "SmsRouter"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "SstpSvc"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "stisvc"
+      },
+      {
+        "runs_as": "NT Authority\\NetworkService",
+        "service": "TermService"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "TieringEngineService"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "TrustedInstaller"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "UmRdpService"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "WarpJITSvc"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "wbengine"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "Wcmsvc"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "wercplsupport"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "WerSvc"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "Winmgmt"
+      },
+      {
+        "runs_as": "NT Authority\\LocalService",
+        "service": "wlpasvc"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "wmiApSrv"
+      },
+      {
+        "runs_as": "localSystem",
+        "service": "WwanSvc"
+      }
+    ]
+  },
+  "timestamp": "2025-04-04 19:18:13"
+}

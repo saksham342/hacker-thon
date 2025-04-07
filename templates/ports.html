@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ports - Network Recon Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Ragnar</div>
+            <nav>
+                <a href="/"><i class="material-icons">dns</i>Host Overview</a>
+                <a href="/ports"><i class="material-icons">settings_ethernet</i>Ports</a>
+                <a href="/scanning"><i class="material-icons">build</i>Scanning</a>
+                <a href="/vulnerabilities"><i class="material-icons">warning</i>Vulnerabilities</a>
+                <a href="/activity-log"><i class="material-icons">terminal</i>Activity Log</a>
+                <a href="/insider-threats"><i class="material-icons">person</i>Insider Threats</a>
+                <a href="/apt"><i class="material-icons">security</i>APT</a>
+                <a href="/manage-cve"><i class="material-icons">add_circle</i>Manage CVE</a> <!-- Added Manage CVE link -->
+                <a href="/social-engineering-toolkit"><i class="material-icons">group</i>Social Engineering Toolkit</a> <!-- Added Social Engineering Toolkit link -->
+                <a href="/zero-day"><i class="material-icons">security</i>Zero-Day</a> <!-- Added Zero-Day Exploits link -->
+                <a href="/help" target="_blank"><i class="material-icons">help_outline</i>Help</a> <!-- Help Section -->
+                <a href="/api_docs" target="_blank"><i class="material-icons">description</i>API Docs</a> <!-- API Docs Section -->
+
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="search-bar">
+                    <i class="material-icons">search</i>
+                    <input type="text" placeholder="Search hosts, ports, services...">
+                </div>
+                <div class="user-menu">
+                    <i class="material-icons notification-icon">notifications</i>
+                    <span class="notification-badge" id="notification-count">0</span>
+                </div>
+            </header>
+            <div class="dashboard">
+                <div class="ports-services card">
+                    <h2>Open Ports</h2>
+                    <div id="ports-table"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script>
+        function updateNotificationCount() {
+            fetch('/api/completed-processes')
+                .then(response => response.json())
+                .then(data => {
+                    const countElement = document.getElementById('notification-count');
+                    countElement.textContent = data.completed_processes;
+                    countElement.style.display = data.completed_processes > 0 ? 'inline-block' : 'none';
+                })
+                .catch(error => console.error('Error fetching notification count:', error));
+        }
+        updateNotificationCount();
+        setInterval(updateNotificationCount, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+[
+    {
+        "file": "./Test/vuln.php",
+        "issues": [
+            {
+                "category": "sql_injection",
+                "matches": [
+                    "SELECT * FROM users WHERE id = '$id'\");",
+                    "SELECT * FROM accounts WHERE username = '$username' AND password = '$password'\";"
+                ],
+                "line_numbers": [
+                    6,
+                    7
+                ],
+                "codeSnippet": "$id = $_GET['id'];\n$result = mysql_query(\"SELECT * FROM users WHERE id = '$id'\");\n$query = \"SELECT * FROM accounts WHERE username = '$username' AND password = '$password'\";"
+            },
+            {
+                "category": "sql_injection",
+                "matches": [
+                    "mysql_query(\"SELECT * FROM users WHERE id = '$id'\")"
+                ],
+                "line_numbers": [
+                    6
+                ],
+                "codeSnippet": "$id = $_GET['id'];\n$result = mysql_query(\"SELECT * FROM users WHERE id = '$id'\");\n$query = \"SELECT * FROM accounts WHERE username = '$username' AND password = '$password'\";"
+            },
+            {
+                "category": "sql_injection",
+                "matches": [
+                    "admin'"
+                ],
+                "line_numbers": [
+                    81
+                ],
+                "codeSnippet": "{\n    \"payload\": \"eval(JSON.stringify({user: 'admin'}))\"\n}"
+            },
+            {
+                "category": "xss",
+                "matches": [
+                    "document.write(\"<img src=x onerror=alert('XSS')>\")",
+                    "document.write(input)",
+                    "document.write(x)"
+                ],
+                "line_numbers": [
+                    22,
+                    24,
+                    72
+                ],
+                "codeSnippet": "// XSS\ndocument.write(\"<img src=x onerror=alert('XSS')>\");\nvar input = location.hash;"
+            },
+            {
+                "category": "xss",
+                "matches": [
+                    "echo $_GET['name']"
+                ],
+                "line_numbers": [
+                    10
+                ],
+                "codeSnippet": "// XSS\necho $_GET['name'];\n"
+            },
+            {
+                "category": "xss",
+                "matches": [
+                    "<img src=x onerror=alert('XSS')>"
+                ],
+                "line_numbers": [
+                    22
+                ],
+                "codeSnippet": "// XSS\ndocument.write(\"<img src=x onerror=alert('XSS')>\");\nvar input = location.hash;"
+            },
+            {
+                "category": "rce",
+                "matches": [
+                    "eval($_GET['cmd'])",
+                    "eval('(' + '{\"role\":\"admin\"}' + ')')",
+                    "eval(data)",
+                    "eval(JSON.stringify({user: 'admin'}))"
+                ],
+                "line_numbers": [
+                    13,
+                    27,
+                    42,
+                    81
+                ],
+                "codeSnippet": "// RCE\neval($_GET['cmd']);\n"
+            },
+            {
+                "category": "rce",
+                "matches": [
+                    "system(cmd)",
+                    "system(\"ls -la\")"
+                ],
+                "line_numbers": [
+                    37,
+                    60
+                ],
+                "codeSnippet": "cmd = input(\"Enter command: \")\nos.system(cmd)\n"
+            },
+            {
+                "category": "rce",
+                "matches": [
+                    "os.system(cmd)"
+                ],
+                "line_numbers": [
+                    37
+                ],
+                "codeSnippet": "cmd = input(\"Enter command: \")\nos.system(cmd)\n"
+            },
+            {
+                "category": "json",
+                "matches": [
+                    "eval(JSON.stringify({user: 'admin'}))"
+                ],
+                "line_numbers": [
+                    81
+                ],
+                "codeSnippet": "{\n    \"payload\": \"eval(JSON.stringify({user: 'admin'}))\"\n}"
+            },
+            {
+                "category": "c_functions",
+                "matches": [
+                    "gets("
+                ],
+                "line_numbers": [
+                    54
+                ],
+                "codeSnippet": "    // Buffer Overflow\n    gets(buf);\n"
+            },
+            {
+                "category": "c_functions",
+                "matches": [
+                    "system(",
+                    "system("
+                ],
+                "line_numbers": [
+                    37,
+                    60
+                ],
+                "codeSnippet": "cmd = input(\"Enter command: \")\nos.system(cmd)\n"
+            },
+            {
+                "category": "lfi",
+                "matches": [
+                    "include($_GET['page'])"
+                ],
+                "line_numbers": [
+                    16
+                ],
+                "codeSnippet": "// LFI\ninclude($_GET['page']);\n"
+            }
+        ]
+    }
+]

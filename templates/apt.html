@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insider Threats - Network Recon Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='insider_threats.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Ragnar</div>
+            <nav>
+                <a href="/"><i class="material-icons">dns</i>Host Overview</a>
+                <a href="/ports"><i class="material-icons">settings_ethernet</i>Ports</a>
+                <a href="/scanning"><i class="material-icons">build</i>Scanning</a>
+                <a href="/vulnerabilities"><i class="material-icons">warning</i>Vulnerabilities</a>
+                <a href="/activity-log"><i class="material-icons">terminal</i>Activity Log</a>
+                <a href="/insider-threats" class="active"><i class="material-icons">person</i>Insider Threats</a>
+                <a href="/apt"><i class="material-icons">security</i>APT</a>
+                <a href="/manage-cve"><i class="material-icons">add_circle</i>Manage CVE</a> <!-- Added Manage CVE link -->
+                <a href="/social-engineering-toolkit"><i class="material-icons">group</i>Social Engineering Toolkit</a> <!-- Added Social Engineering Toolkit link -->
+                <a href="/zero-day"><i class="material-icons">security</i>Zero-Day</a> <!-- Added Zero-Day Exploits link -->
+                <a href="/help" target="_blank"><i class="material-icons">help_outline</i>Help</a> <!-- Help Section -->
+                <a href="/api_docs" target="_blank"><i class="material-icons">description</i>API Docs</a> <!-- API Docs Section -->
+
+            </nav>
+        </div>
+        <div class="main-content">
+            <header style="margin-left: 20px; border-radius: 14px;">
+                <div class="search-bar" style="width: 45vh;">
+                    <i class="material-icons">search</i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-menu">
+                    <i class="material-icons notification-icon">notifications</i>
+                    <span class="notification-badge" id="notification-count">0</span>
+                </div>
+            </header>
+            <div class="dashboard" style="padding: 20px;">
+                <div class="section" style="margin-left: 20px; border-radius: 12px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2 style="margin: 0;">Advanced Persistent Threat</h2>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <button id="reload-button" class="scan-form button">Reload Data</button>
+                            <label style="font-size: 14px; color: var(--text-light);">
+                                <input type="checkbox" id="auto-refresh-toggle"> Auto-refresh (2 min)
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Tab Navigation -->
+                    <div class="tabs">
+                        <button class="tab-button active" data-tab="backdoor">Backdoor</button>
+                        <button class="tab-button" data-tab="cve-details">CVE Details</button>
+                        <button class="tab-button" data-tab="privilege-escalation">Privilege Escalation Vectors</button>
+                        <button class="tab-button" data-tab="credentials-theft">Credentials Theft Details</button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <!-- Backdoor Tab -->
+                        <div id="backdoor-tab" class="tab-pane active">
+                            <label for="backdoor-ip">Agent IP:</label>
+                            <select id="backdoor-ip"></select>
+                            <div id="backdoor-results" class="results-section">
+                                <p>No results yet...</p>
+                            </div>
+                        </div>
+
+                        <!-- CVE Details Tab -->
+                        <div id="cve-details-tab" class="tab-pane">
+                            <label for="cve-details-ip">Agent IP:</label>
+                            <select id="cve-details-ip"></select>
+                            <div id="cve-details-results" class="results-section">
+                                <p>No results yet...</p>
+                            </div>
+                        </div>
+
+                        <!-- Privilege Escalation Vectors Tab -->
+                        <div id="privilege-escalation-tab" class="tab-pane">
+                            <label for="privilege-escalation-ip">Agent IP:</label>
+                            <select id="privilege-escalation-ip"></select>
+                            <div id="privilege-escalation-results" class="results-section">
+                                <p>No results yet...</p>
+                            </div>
+                        </div>
+
+                        <!-- Credentials Theft Details Tab -->
+                        <div id="credentials-theft-tab" class="tab-pane">
+                            <label for="credentials-theft-ip">Agent IP:</label>
+                            <select id="credentials-theft-ip"></select>
+                            <div id="credentials-theft-results" class="results-section">
+                                <p>No results yet...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateNotificationCount() {
+            fetch('/api/completed-processes')
+                .then(response => response.json())
+                .then(data => {
+                    const countElement = document.getElementById('notification-count');
+                    countElement.textContent = data.completed_processes;
+                    countElement.style.display = data.completed_processes > 0 ? 'inline-block' : 'none';
+                })
+                .catch(error => console.error('Error fetching notification count:', error));
+        }
+        updateNotificationCount();
+        setInterval(updateNotificationCount, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Dear {name},
+
+We noticed suspicious activity in your account.
+Please verify your login details:
+{phishing_url}
+
+Best regards,
+Information Security Team

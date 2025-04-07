@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReconX - Insider Threats Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Roboto", sans-serif;
+            background: linear-gradient(135deg, #1e2a44, #2c3e50);
+            color: #ecf0f1;
+            min-height: 100vh;
+            display: flex;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            height: fit-content;
+        }
+        .sidebar .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .sidebar nav a {
+            display: flex;
+            align-items: center;
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .sidebar nav a:hover {
+            background: #3e5468;
+        }
+        .sidebar nav a i {
+            margin-right: 10px;
+        }
+        .main-content {
+            flex: 1;
+            padding-left: 20px;
+        }
+        header {
+            background: #34495e;
+            padding: 15px;
+            border-radius: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: #2c3e50;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        .search-bar i {
+            color: #95a5a6;
+            margin-right: 10px;
+        }
+        .search-bar input {
+            background: none;
+            border: none;
+            color: #ecf0f1;
+            font-size: 14px;
+            outline: none;
+        }
+        .user-menu {
+            position: relative;
+        }
+        .notification-icon {
+            color: #ecf0f1;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+            display: none;
+        }
+        .dashboard {
+            background: #34495e;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-family: "Tektur", sans-serif;
+            text-align: center;
+            font-size: 28px;
+            color: #ecf0f1;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .log-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #2c3e50;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #3e5468;
+        }
+        th {
+            background: #e74c3c;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        td {
+            font-size: 14px;
+        }
+        tr {
+            transition: background 0.3s;
+        }
+        tr:hover {
+            background: #3e5468;
+        }
+        .warning {
+            color: #e74c3c;
+            font-weight: bold;
+            background: rgba(231, 76, 60, 0.1);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .no-data {
+            text-align: center;
+            padding: 30px;
+            color: #95a5a6;
+            font-size: 16px;
+        }
+        .scroll-container {
+            max-height: 600px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        .scroll-container::-webkit-scrollbar {
+            width: 10px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: #2c3e50;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #e74c3c;
+            border-radius: 5px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Ragnar</div>
+            <nav>
+                <a href="/"><i class="material-icons">dns</i>Host Overview</a>
+                <a href="/ports"><i class="material-icons">settings_ethernet</i>Ports</a>
+                <a href="/scanning"><i class="material-icons">build</i>Scanning</a>
+                <a href="/vulnerabilities"><i class="material-icons">warning</i>Vulnerabilities</a>
+                <a href="/activity-log"><i class="material-icons">terminal</i>Activity Log</a>
+                <a href="/insider-threats"><i class="material-icons">person</i>Insider Threats</a>
+                <a href="/apt"><i class="material-icons">security</i>APT</a>
+                <a href="/manage-cve"><i class="material-icons">add_circle</i>Manage CVE</a>
+                <a href="/social-engineering-toolkit"><i class="material-icons">group</i>Social Engineering Toolkit</a>
+                <a href="/zero-day"><i class="material-icons">security</i>Zero-Day</a>
+                <a href="/help" target="_blank"><i class="material-icons">help_outline</i>Help</a> <!-- Help Section -->
+                <a href="/api_docs" target="_blank"><i class="material-icons">description</i>API Docs</a> <!-- API Docs Section -->
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="search-bar" style="width: 45vh;">
+                    <i class="material-icons">search</i>
+                    <input type="text" placeholder="Search hosts, ports, services...">
+                </div>
+                <div class="user-menu">
+                    <i class="material-icons notification-icon">notifications</i>
+                    <span class="notification-badge" id="notification-count">0</span>
+                </div>
+            </header>
+            <div class="dashboard">
+                <h1>Out-of-Hours API Activity</h1>
+                <div class="scroll-container">
+                    <table class="log-table" id="logTable">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>API Path</th>
+                                <th>Method</th>
+                                <th>Status</th>
+                                <th>User</th>
+                                <th>Warning</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logBody">
+                            {% if initial_logs %} 
+                            {% for log in initial_logs %}
+                            <tr>
+                                <td>{{ log.timestamp }}</td>
+                                <td>{{ log.api_path }}</td>
+                                <td>{{ log.method }}</td>
+                                <td>{{ log.status }}</td>
+                                <td>{{ log.user }}</td>
+                                <td class="warning">{{ log.warning }}</td>
+                            </tr>
+                            {% endfor %} 
+                            {% else %}
+                            <tr>
+                                <td colspan="6" class="no-data">
+                                    No out-of-hours API activity detected yet.
+                                </td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+    <script>
+        const socket = io("http://localhost:5000");
+
+        socket.on("connect", () => {
+            console.log("Connected to SocketIO server");
+        });
+
+        socket.on("initial_logs", (logs) => {
+            updateLogs(logs, true);
+        });
+
+        socket.on("new_logs", (newLogs) => {
+            updateLogs(newLogs, false);
+        });
+
+        function updateLogs(logs, clear = false) {
+            const logBody = document.getElementById("logBody");
+            if (clear) {
+                logBody.innerHTML = "";
+            }
+
+            if (logs.length === 0 && clear) {
+                logBody.innerHTML =
+                    '<tr><td colspan="6" class="no-data">No out-of-hours API activity detected yet.</td></tr>';
+                return;
+            }
+
+            logs.forEach((log) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${log.timestamp}</td>
+                    <td>${log.api_path}</td>
+                    <td>${log.method}</td>
+                    <td>${log.status}</td>
+                    <td>${log.user}</td>
+                    <td class="warning">${log.warning}</td>
+                `;
+                logBody.insertBefore(row, logBody.firstChild);
+            });
+        }
+
+        function updateNotificationCount() {
+            fetch('/api/completed-processes')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const countElement = document.getElementById('notification-count');
+                    countElement.textContent = data.completed_processes;
+                    countElement.style.display = data.completed_processes > 0 ? 'inline-block' : 'none';
+                })
+                .catch(error => console.error('Error fetching notification count:', error));
+        }
+        updateNotificationCount();
+        setInterval(updateNotificationCount, 5000);
+    </script>
+</body>
+</html>
